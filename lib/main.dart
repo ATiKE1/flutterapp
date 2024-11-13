@@ -18,13 +18,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: const MyHomePage(title: 'Flutter Demo Home Page'),
+        debugShowCheckedModeBanner: false);
   }
 }
 
@@ -67,11 +67,19 @@ class _MyHomePageState extends State<MyHomePage> {
             Image.network(queue[currentIndex].imageLink),
             Text(
               queue[currentIndex].header,
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF0560FA),
+                  fontSize: 24),
+              textAlign: TextAlign.center,
             ),
             Text(
               queue[currentIndex].description,
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: const TextStyle(
+                  fontWeight: FontWeight.normal,
+                  color: Colors.black,
+                  fontSize: 16),
+              textAlign: TextAlign.center,
             ),
             isNotLast
                 ? Row(children: [
